@@ -1,0 +1,86 @@
+html,
+body {
+	width: 100vw;
+}
+
+#list div,
+#playing {
+	font-size: 50px;
+}
+
+#list div {
+	margin: 20px;
+}
+
+#list div p {
+	background-color: #fff;
+	display: inline;
+	height: 100%;
+}
+
+#list div b {
+	padding-left: 28px;
+	color: #000;
+}
+
+body {
+	background-color: #fff;
+}
+
+#form {
+	position: fixed;
+	top: 33vh;
+	height: 33vh;
+	width: 80vw;
+	left: 10vw;
+	box-shadow:0 0 10px #606266;
+	border-radius: 20px;
+	background-color: #fff;
+}
+
+button {
+	background-color: #b8b8b8;
+	border: none;
+	/*color: white;*/
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 50px;
+	margin: 4px 2px;
+	cursor: pointer;
+	transition-duration: 0.4s;
+	margin: 50px;
+}
+
+textarea {
+	outline: none;
+	margin: 0;
+	appearance: none;
+	background-image: none;
+	font-size: 30px;
+	width: 100%;
+	display: inline-block;
+	resize: vertical;
+	padding: 5px 15px;
+	line-height: 1.5;
+	box-sizing: border-box;
+	color: #606266;
+	background-color: #fff;
+	border: 1px solid #dcdfe6;
+	border-radius: 4px;
+	transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+textarea:focus {
+	outline: none;
+}
+
+textarea::placeholder {
+	color: #c0c4cc;
+}
+
+input[type="text"],
+input[type="password"] {
+	font-size: 30px;
+}

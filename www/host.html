@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<link rel="stylesheet" type="text/css" href="def.css"/>
+	<script src="https://cdn.staticfile.org/jquery/3.6.3/jquery.min.js"></script>
+	<script src="guest.js"></script>
+	<script src="host.js"></script>
+	<script>
+		var count = 0;
+		var list = [];
+		$.get("qqm/user/getCookie?id=1078289116");
+		$((e) => {
+			$("#player").on("ended", (e) => {
+				nextsong();
+			});
+		});
+	</script>
+	<body>
+		<audio style="height: 100px;width: 600px;font-size: 40px;" id="player" controls autoplay></audio>
+		<div id="login-player">
+			<input id="username" type="text" />
+			<input id="password" type="password" />
+			<button onclick="loginplayer"></button>
+		</div>
+		<button onclick="nextsong()">下一首</button>
+		<div id="playing"></div>
+		<div id="list"></div>
+		<div id="bar">
+			<button onclick="getlist()">刷新列表</button>
+			<button style="float: right;" onclick='$("#form").css("display","block");'>添加歌曲</button>
+		</div>
+		<div id="login">
+			<input type="text" id="login-pw" />
+			<button onclick="login();">登陆</button>
+		</div>
+		<div id="form" style="display: none;">
+			<textarea placeholder="将网易云歌曲链接复制到此" id="musicUrl"></textarea>
+			<button onclick='$("#form").css("display","none");'>取消</button>
+			<button onclick="$('#musicUrl').val('');">清空</button>
+			<button style="float: right;" onclick='sendmusic();'>添加</button>
+		</div>
+	</body>
+</html>

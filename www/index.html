@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<link type="text/css" rel="stylesheet" href="def.css">
+	<script src="https://cdn.staticfile.org/jquery/3.6.3/jquery.min.js"></script>
+	<script src="guest.js"></script>
+	<script>
+		$((e) => {
+			$.get("use/status", (g) => {
+				if (g == "online") {
+					alert("播放器在线");
+				} else if (g == "offline") {
+					alert("播放器离线（可以点歌）");
+				} else {
+					alert("未知错误");
+					console.log(g);
+				}
+			});
+			linkws();
+		});
+	</script>
+	<body>
+		<div id="playing"></div>
+		<div id="list"></div>
+		<div id="bar">
+			<button onclick="getlist()">刷新列表</button>
+			<button style="float: right;" onclick='$("#form").css("display","block");'>添加歌曲</button>
+		</div>
+		<div id="form" style="display: none;">
+			<textarea placeholder="将网易云/QQ音乐歌曲链接复制到此" id="musicUrl"></textarea>
+			<button onclick='$("#form").css("display","none");'>取消</button>
+			<button onclick="$('#musicUrl').val('');">清空</button>
+			<button style="float: right;" onclick='sendmusic();'>添加</button>
+		</div>
+	</body>
+</html>
